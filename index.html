@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Практична 3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="text-bg-secondary">
+<!--Заголовок-->
+<header class="row text-bg-dark m-0 p-3">
+  <span class="col h3 text-start">Практична робота 3</span> 
+  <span class="col h3 text-center">Завдання 1</span> 
+  <span class="col h3 text-end">ТВ-32 Михайленко Роман</span>
+</header>
+<!--Основна частина-->
+<div class="row text-bg-secondary m-0">
+  <!--Половина з полями вводу і кнопкною обрахунку-->
+  <span class="col">
+    <p class="h4 m-3">Поля вводу:</p>
+    <!--Форма з інпут полями-->
+    <form class="m-3" onsubmit="calculateAndShow(event)">
+      <!-- Поле потужності -->      
+      <div class="w-75 mb-3">
+        <label for="avg_power" class="form-label">Середньодобова потужність Р<sub>c</sub>, МВт:</label>
+        <input type="number" value="5"class="form-control" id="avg_power" name="form-control" placeholder="МВт потужності" min="0" step="any" required>
+      </div>
+      <!-- Поле відхилення 1 -->
+      <div class="w-75 mb-3">
+        <label for="deviation1" class="form-label">Середньоквадратичне відхилення σ<sub>1</sub>, МВт:</label>
+        <input type="number" value="1" class="form-control" id="deviation1" name="deviation1" placeholder="Відхилення 1 МВт" min="0" step="any" required>
+      </div>
+      <!-- Поле відхилення 2 -->
+      <div class="w-75 ">
+        <label for="deviation2" class="form-label">Середньоквадратичне відхилення σ<sub>2</sub>, МВт:</label>
+        <input type="number" value="0.25" class="form-control" id="deviation2" name="deviation2" placeholder="Відхилення 2 МВт" min="0" step="any" required>
+      </div>
+      <!-- Поле вартості -->
+      <div class="w-75 ">
+        <label for="price" class="form-label">Вартість електроенергії В, грн/кВт*год:</label>
+        <input type="number" value="7" class="form-control" id="price" name="price" placeholder="Вартість грн/кВт*год" min="0" step="any" required>
+      </div>
+      <!-- Кнопка підтвердження відпраки -->
+      <button type="submit" class="btn btn-primary mt-3" >Обрахувати</button>
+    </form>
+  </span>
+  
+  <!--Половина з виводом результатів-->
+  <span class="col">
+    <p class="h4 m-3">Результат:</p>
+    <span class="fs-5 m-3">Прибуток П = <span id="result"></span> тис. грн.</span>
+    </span>
+</div>
+</body>
+</html>
